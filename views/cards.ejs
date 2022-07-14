@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ABC</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="modal modal-sheet position-static d-block bg-secondary py-5" tabindex="-1" role="dialog" id="modalSheet">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content rounded-4 shadow">
+            <div class="modal-body p-4 text-center">
+            <h5 class="mb-0">SMALL POKEMONS</h5><br />
+            <div class="modal-body py-0">
+                    <% pokeList.forEach(item => {
+                    if (item.height < 7) {
+                        %>
+                    <div class="pokeBox"><%= item.name %><br /><img src="<%=item.image%>"></div>
+                    <%   
+                    }}) %>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+      <div class="modal modal-alert position-static d-block bg-secondary py-5" tabindex="-1" role="dialog" id="modalChoice">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-body p-4 text-center">
+        <h5 class="mb-0">BIG POKEMONS</h5><br />
+        <div class="modal-body py-0">
+              <% pokeList.forEach(item => {
+                if (item.height > 7) {
+                 %>
+                <div class="pokeBox"><%= item.name%><br /><img src="<%=item.image%>"></div>
+               <%   
+                }}) %>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+            
+
+
+
+    
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
