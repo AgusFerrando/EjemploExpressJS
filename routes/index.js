@@ -1,6 +1,7 @@
-const fetch = require('node-fetch')
+const fetch = require('node-fetch');
 var express = require('express');
 var router = express.Router();
+
 
 let listaItems = [
   item1= 'item1',
@@ -23,18 +24,18 @@ fetch("https://pokeapi.co/api/v2/pokemon?offset=0&limit=20")
         }                                          
       })
 
+let funcionPrueba = () => {
+  console.log('hola!!');
+}
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { listaItems , pokeList });
+  res.render('index', { listaItems , pokeList, funcionPrueba });
 });
 
 router.get('/cards', function(req, res, next) {
   res.render('cards', { pokeList });
-});
-
-router.get('/login', function(req, res, next) {
-  res.render('login');
 });
 
 
