@@ -12,6 +12,7 @@
             <div class="modal-body p-4 text-center">
             <h5 class="mb-0">SMALL POKEMONS</h5><br />
             <div class="modal-body py-0">
+                    <!-- Recorro el array de pokemones y pongo como condicion que si la altura es menos a 7 me los muestre -->
                     <% pokeList.forEach(item => {
                     if (item.height < 7) {
                         %>
@@ -29,7 +30,7 @@
       <div class="modal-body p-4 text-center">
         <h5 class="mb-0">BIG POKEMONS</h5><br />
         <div class="modal-body py-0">
-              <% pokeList.forEach(item => {
+                <% pokeList.forEach(item => {
                 if (item.height > 7) {
                  %>
                 <div class="pokeBox"><%= item.name%><br /><img src="<%=item.image%>"></div>
