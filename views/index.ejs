@@ -33,3 +33,63 @@
   </body>
   </body>
 </html>
+
+<!--ANDREA-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <!-- //LLamada a Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" 
+        crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" 
+        crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <h2><%= saludo %></h2>
+    <p>Bienvenido a <b><%= title %></b><br><%= pregunta %></p>
+    <p>A continuación te pasamos los datos de nuestros alumnos:<br></p>
+    
+    <div class="container">
+      <table border = "1" class="table table-striped">
+        <!--Primera fila-->
+        <tr>
+          <!--Título de la primera colummna-->
+            <th>ID</th>
+          <!--Título de la segunda colummna-->
+            <th>Nombres</th>
+          <!--Título de la tercera colummna-->
+            <th>Procedencia</th>
+        </tr>
+  
+        <!--Tengo que recorrer un array, para ello necesito hacer un bucle for-->
+        <% for (i = 0; i < personas.length; i++){ %> 
+          <!--Segunda columna-->
+        <tr>
+          <!--Primera columna table datas-->
+            <td> <%= personas[i].id %> </td>
+          <!--Segunda columna-->
+            <td><%= personas[i].nombre %></td>
+          <!--Tercera columna-->
+            <td><%= personas[i].lugar %></td>
+        </tr>
+  
+        <% }  %> 
+      </table>
+    </div>
+
+    <div class="funcion">
+        <h2> Divisiones</h2>
+        <ul>
+            <li>Si divido 25:5, el resultado me da <%= division(25,5) %> </li>
+            <li>Si divido 2:0, el resultado es <%= division(2,0) %> </li>
+            <li>Si divido 29:3, el resultado es <%= ~~(division (29,3)) %> </li>
+            <li>Si divido 29593: 235, el resultado es <%= division(29593,235) %></li>
+        </ul>
+    </div>
+  </body>
+</html>

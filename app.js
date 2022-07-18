@@ -39,3 +39,9 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+/*ANDREA*/
+
+app.listen(3000, ()=> {
+  console.log ('Escuchando el puerto 3000');
+});
